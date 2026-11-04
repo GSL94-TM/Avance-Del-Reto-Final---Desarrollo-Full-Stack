@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<!--Indica a los buscadores y a los lectores de pantalla para personas invidentes que debe leer el texto en idioma español-->
+<html lang="es"> <!--Accesibilidad-->
+
+    <head>
+        <meta charset="UTF-8"> <!--Permite que el navegador interprete tildes y caracteres especiales-->
+
+        <!--Obliga al navegador a usar el ancho real de la pantalla de cada dispositivo donde se visualice la página-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Responsibidad-->
+
+        <!--Texto que aparece en la pestaña superior del navegador y en los resultados del buscador.-->
+        <title> Café Del Valle</title>
+
+        <!--Conexión de la estructura HTML con la hoja de estilos CSS-->
+        <link rel="stylesheet" href="styles.css"> 
+    </head>
+
+    <body id="inicio">
+        <!--id="inicio" para que cuando alguien haga clic en "Inicio", la página suba hasta esa parte, y una class para darle el-->
+        <!--color con CSS-->
+        <header class="encabezado-principal">
+            <div class="logo-marca">
+
+                <!--Ruta Relativa para cargas imagenes-->
+                <img src="img/logo.png" alt="Logo de la marca" class="logo-img">
+
+                <div class="logo-texto">
+                    <!--Nombre de la marca-->
+                    <span class="nombre-marca">Café Del Valle</span> 
+
+                    <!--Eslogan de la marca-->
+                    <span class="eslogan">Sabor que nace de la Tierra</span>
+                </div>
+            </div>
+
+            <!--Barra de navegación (El menú)-->
+            <nav class="navegacion">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#tareas">Tareas</a></li> <!-- ACTIVIDAD 2: ENLACE A TAREAS -->
+                    <li><a href="#login-seccion">Acceso Administrativo</a></li> <!--AVANCE DEL RETO-->
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>Café Del Valle</h1>
+                <p>Café 100% mexicano, cultivado con pasión y respeto por la naturaleza.</p>
+
+                <!--Etiqueta Enlace-->
+                <a href="#productos" class="btn-primario">Conoce nuestros productos</a>
+            </section>
+
+            <section id="nosotros" class="seccion-nosotros">
+                <div class="nosotros-contenido">
+                    <h2>¿Quiénes Somos?</h2>
+                    <p>Somos una pequeña empresa familiar dedicada al cultivo y venta de café de alta calidad. Nuestro café proviene de fincas mexicanas, donde el clima y la tierra se combinan para ofrecer un sabor único y natural.</p>
+
+                    <h3>Misión:</h3>
+                    <p>Llevar el mejor café de altura del campo mexicano a cada hogar cuidando el ecosistema, y ser referentes nacionales en caficultura sustentable</p> 
+
+                    <h3>Visión:</h3> 
+                    <p> Para el año 2030, ser reconocidos como la empresa caficultora líder en la producción de café de especialidad, distinguidos por preservar los sabores tradicionales de la tierra y liderar un modelo de cultivo 100% sustentable que impulse el bienestar de nuestras comunidades cafetaleras y respete el medio ambiente.</p>
+
+                    <a href="#contacto" class="btn-primario">Conoce más sobre Nosotros</a>
+                </div>
+
+                <div class="nosotros-imagen">
+                    <img src="img/nosotros.jpg" alt="Taza de cafe recien preparada sobre una mesa con montañas al fondo" class="nosotros-img">
+                </div>
+            </section>
+
+            <section id="productos" class="seccion-productos">
+                <h2>Nuestros Productos</h2>
+                <p class="subtitulo-seccion">Descubre el sabor auténtico de nuestro Cáfe</p>
+
+                <div class="contenedor-productos">
+
+                    <!--Producto Café Clásico-->
+                    <article class="tarjeta-producto">
+                        <img src="img/cafe-clasico.jpg" alt="Bolsa de Café Clásico" class="producto-img">
+                        <div class="info-producto">
+                            <h3>Café Clásico</h3>
+                            <p>Equilibrado, tradicional y accesible que combina un perfil de sabor nostálgico con notas marcadas de cacao, frutos secos y un tostado medio-oscuro.</p>
+                            <span class="precio-producto">$75.00 MXN</span>
+                            <a href="#contacto" class="btn-producto">Ver más</a>
+                        </div>
+                    </article>
+
+                    <!--Producto Café Descafeinado-->
+                    <article class="tarjeta-producto">
+                        <img src="img/cafe-descafeinado.jpg" alt="Bolsa de Café Descafeinado" class="producto-img">
+                        <div class="info-producto">
+                            <h3>Café Descafeinado</h3>
+                            <p>Café Clásico al que se le ha extraído al menos el 97% de la cafeína original de los granos antes del proceso de tostado</p>
+                            <span class="precio-producto">$100.00 MXN</span>
+                            <a href="#contacto" class="btn-producto">Ver más</a>
+                        </div>
+                    </article>
+
+                    <!--Producto Café En Grano-->
+                    <article class="tarjeta-producto">
+                        <img src="img/cafe-en-grano.jpg" alt="Bolsa de Café en Grano" class="producto-img">
+                        <div class="info-producto">
+                            <h3>Café En Grano</h3>
+                            <p>Semilla tostada del fruto del cafeto, la cual se conserva entera para molerse justo antes de su preparación y garantizar un aroma y sabor superiores.</p>
+                            <span class="precio-producto">$125.00 MXN</span>
+                            <a href="#contacto" class="btn-producto">Ver más</a>
+                        </div>
+                    </article>
+
+                    <!--Producto Café Intenso-->
+                    <article class="tarjeta-producto">
+                        <img src="img/cafe-intenso.jpg" alt="Bolsa de Café Intenso" class="producto-img">
+                        <div class="info-producto">
+                            <h3>Café Intenso</h3>
+                            <p>Aroma potente, cuerpo robusto y un amargor pronunciado, diseñada para quienes buscan una experiencia sensorial fuerte y persistente en el paladar.</p>
+                            <span class="precio-producto">$150.00 MXN</span>
+                            <a href="#contacto" class="btn-producto">Ver más</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!--ACTIVIDAD 2: INICIO DE NUEVA SECCIÓN DE GESTIÓN DE TAREAS -->
+            <section id="tareas" class="seccion-tareas">
+                <h2>Gestión de Tareas - Café Del Valle</h2>
+                <p class="subtitulo-seccion">Administra las actividades pendientes de producción, tostado y pedidos</p>
+
+                <div class="contenedor-tareas">
+                    <!--Campo de entrada (input) y botón para agregar tareas-->
+                    <div class="formulario-tareas">
+                        <input type="text" id="input-tarea" placeholder="Escribe una nueva tarea (ej. Revisar Pedidos Pendientes)...">
+                        <button type="button" id="btn-agregar-tarea" class="btn-primario">Agregar Tarea</button>
+                    </div>
+
+                    <!--Mensaje de error para validación cuando el campo esté vacío-->
+                    <p id="error-tarea" class="mensaje-error-tarea"></p>
+
+                    <!--Lista (ul) donde se mostrarán todas las tareas dinámicamente-->
+                    <ul id="lista-tareas" class="lista-tareas"></ul>
+                </div>
+            </section>
+            <!--ACTIVIDAD 2: FIN DE NUEVA SECCIÓN DE GESTIÓN DE TAREAS -->
+
+
+            <!--AVANCE DEL RETO FINAL: INICIO-->>
+            <!-- SECCIÓN DE INICIO DE SESIÓN -->
+            <section id="login-seccion" class="seccion-admin">
+                <div class="tarjeta-login">
+                    <h2>Acceso Administrativo</h2>
+                    <p>Inicia sesión para gestionar el inventario</p>
+                    <form id="form-login">
+                        <div class="campo-formulario">
+                            <label for="usuario">Usuario:</label>
+                            <input type="text" id="usuario" required>
+                        </div>
+                        <div class="campo-formulario">
+                            <label for="password">Contraseña:</label>
+                            <input type="password" id="password" required>
+                        </div>
+                            <button type="submit" class="btn-primario">Entrar</button>
+                            <p id="error-login" style="color: red; display: none;">Credenciales incorrectas</p>
+                    </form>
+                </div>
+            </section>
+
+            <!--SECCIÓN PRINCIPAL: PANEL DE GESTIÓN DE DATOS (Backend)-->
+            <section id="panel-inventario" class="seccion-admin" style="display: none;">
+                <h2>Panel de Inventario en Vivo</h2>
+    
+                <!--Formulario para agregar datos al backend-->
+                <form id="form-producto-nuevo" class="formulario-horizontal">
+                    <input type="text" id="nuevo-nombre" placeholder="Nombre del producto" required>
+                    <input type="number" id="nuevo-precio" placeholder="Precio" required>
+                    <button type="submit" class="btn-primario">Agregar al Backend</button>
+                </form>
+
+                <!--Lista donde se mostrarán los datos de MySQL-->
+                <ul id="lista-backend" class="lista-tareas"></ul>
+                <button id="btn-cerrar-sesion" class="btn-eliminar" style="margin-top: 20px;">Cerrar Sesión</button>
+            </section>
+            <!--AVANCE DEL RETO FINAL: FIN-->>
+
+
+            <section id="contacto" class="seccion-contacto">
+                <div class="contacto-info">
+                    <h2>Contáctanos</h2>
+                    <p>¿Tienes alguna pregunta o comentario? ¡Contáctanos! Será un placer ayudarte</p>
+                    <ul>
+                        <li>WhatsApp: +52 88 6677 8899</li>
+                        <li>Teléfono: 800 123 543 23</li>
+                        <li>Email: hola@cafedelvalle.com</li>
+                        <li>Dirección: Av. Los Pinos 123, Oaxaca, México</li>
+                    </ul>
+                </div>
+
+                <!--Formulario de Contacto.
+                Action: Define a que URL o ruta se enviarán los datos cuando el usuario presione "Enviar". Como en esta Actividad 1 aún 
+                no hay un servidor Backend programado con bases de datos, poner action="#contacto" permite que el formulario ejecute la 
+                validación y recargue limpiamente en la misma sección sin arrojar un error 404 de "Página no encontrada".-->
+                <form class="formulario-contacto" action="#contacto" method="POST" onsubmit="event.preventDefault(); document.getElementById('mensaje-exito').style.display='block'; this.reset();">
+
+                    <!--Campo Nombre-->
+                    <div class="campo-formulario">
+                        <label for="nombre">Nombre Completo</label>
+
+                        <!--Impide que el usuario envíe el formulario vacío. Si intenta darle clic a "Enviar" sin llenar el campo, el 
+                        navegador mostrará una alerta automática pidiéndole que lo complete con mínimo 8 caracteres.-->
+                        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu Nombre" required minlength="8">
+                    </div>
+
+                    <!--Campo Email-->
+                    <div class="campo-formulario">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+
+                    <!--Campo Mensaje-->
+                    <div class="campo-formulario">
+                        <label for="mensaje">Mensaje</label>
+
+                        <!--Para textos largos de varios renglones se usa la etiqueta <textarea>.
+                        rows="4": Define la altura inicial del cuadro de texto, configurándolo para que muestre exactamente 4 líneas de 
+                        texto visibles de forma predeterminada-->
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu pregunta o comentario" required></textarea>
+                    </div>
+
+                    <!--Boton de Enviar. type="submit" es lo que le ordena al formulario validar todos los campos required y enviar los 
+                    datos-->
+                    <button type="submit" class="btn-enviar">Enviar</button>
+
+                    <!--Mensaje de confirmación de mensaje enviado-->
+                    <p id="mensaje-exito" class="alerta-exito">
+                        ¡Gracias por escribirnos! Tu mensaje ha sido enviado correctamente a Café del Valle.
+                    </p>
+                </form>
+            </section>
+        </main>
+
+        <footer class="pie-de-pagina">
+
+            <!--Logo de la Empresa-->
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="Logo de la empresa" class="logo-empresa-footer">
+            </div>
+
+            <!--Copyright-->
+            <div class="footer-copyright">
+                <p>&copy; 2026 Café del Valle. Todos los derechos reservados.</p>
+            </div>
+
+            <!--Redes Sociales-->
+            <div class="footer-redes">
+
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
+
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                    <img src="img/youtube.png" alt="YouTube">
+                </a>
+
+            </div>
+        </footer>
+
+        <!--ACTIVIDAD 2: INICIO DE CONEXIÓN CON EL ARCHIVO DE JavaScript-->
+        <script src="app.js"></script>
+        <!--ACTIVIDAD 2: FIN DE CONEXIÓN CON EL ARCHIVO DE JavaScript-->
+
+    </body>
+</html>

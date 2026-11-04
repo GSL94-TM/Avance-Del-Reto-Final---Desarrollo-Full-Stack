@@ -1,0 +1,670 @@
+/*
+Reset Universal y Box Model
+El asterisco * es el Selector Universal: selecciona todas las etiquetas del HTML al mismo tiempo
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Colores De Diseño*/
+:root {
+    --color-cafe-oscuro: #2B1D14;    /* Fondo de Header, Contacto y Footer */
+    --color-cafe-medio: #4A3325;     /* Detalles y bordes secundarios */
+    --color-verde-marca: #4E9F3D;    /* Botones principales y acentos */
+    --color-verde-hover: #3B7A2E;    /* Color del botón al pasar el mouse */
+    --color-fondo-crema: #F7F4EF;    /* Fondo suave de ¿Quiénes somos? */
+    --color-fondo-productos: #EBF0E6;/* Fondo verde salvia claro de Productos */
+    --color-blanco: #FFFFFF;         /* Fondo de tarjetas y textos claros */
+    --color-texto-oscuro: #2C221E;   /* Texto principal de alta legibilidad */
+    --color-texto-claro: #F5EFE6;    /* Texto sobre fondos oscuros */
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*Estilos Base Y Componentes Reutilizables*/
+html {
+    /*cuando el usuario haga clic en el menú, la página no dará un salto brusco, sino que se deslizará suavemente hacia la sección*/
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6; /* Espacio entre renglones para lectura cómoda */
+}
+
+img {
+    max-width: 100%; /* Evita que las imágenes se salgan de la pantalla en celulares */
+    display: block;
+}
+
+.btn-primario, .btn-producto, .btn-enviar {
+    display: inline-block;
+    background-color: var(--color-verde-marca);
+    color: var(--color-blanco);
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primario:hover, .btn-producto:hover, .btn-enviar:hover {
+    background-color: var(--color-verde-hover);
+    transform: translateY(-2px); /*Pequeño efecto de elevación al pasar el mouse*/
+}
+
+/*Encabezado Y Navegación*/
+.encabezado-principal {
+    background-color: var(--color-cafe-oscuro);
+    color: var(--color-texto-claro);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 8%; /*16px arriba/abajo y 8% de margen a los lados*/
+    position: sticky; /*Hace que el menú acompañe al bajar por la página*/
+    top: 0;
+    z-index: 100;
+}
+
+.logo-marca {
+    display: flex;
+    align-items: center;
+    gap: 12px; /*Separación entre la imagen del logo y el texto*/
+}
+
+.logo-img {
+    width: 45px;
+    height: auto;
+}
+
+.logo-texto {
+    display: flex;
+    flex-direction: column; /*Apila el nombre arriba y el eslogan abajo*/
+}
+
+.nombre-marca {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-blanco);
+}
+
+.eslogan {
+    font-size: 0.75rem;
+    color: #C2B2A3;
+}
+
+.navegacion ul {
+    list-style: none; /*Quita los puntos de la lista <ul>*/
+    display: flex;    /*Pone los enlaces uno al lado del otro*/
+    gap: 30px;        /*Espacio entre Inicio, Nosotros, Productos, Contacto*/
+}
+
+.navegacion a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 4px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navegacion a:hover {
+    color: var(--color-verde-marca);
+    border-bottom: 2px solid var(--color-verde-marca);
+}
+
+/*Sección HERO (PORTADA PRINCIPAL)*/
+.hero {
+    /*Velo oscuro semitransparente + imagen de fondo*/
+    background-image: linear-gradient(rgba(25, 15, 10, 0.6), rgba(25, 15, 10, 0.6)), url('img/hero.jpg');
+    background-size: cover;       /*Hace que la foto cubra todo el ancho sin deformarse*/
+    background-position: center;  /*Centra la fotografía*/
+    color: var(--color-blanco);
+    padding: 110px 8%;            /*Da altura a la portada y alinea con el menú*/
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 550px; /*Evita que el renglón sea demasiado largo*/
+    margin-bottom: 30px;
+}
+
+/*Sección ¿QUIÉNES SOMOS? (Selector de ID + Clases)*/
+#nosotros.seccion-nosotros {
+    background-color: var(--color-fondo-crema);
+    padding: 80px 8%;
+    display: flex;
+    align-items: center; /*Centra verticalmente el texto respecto a la foto*/
+    gap: 50px;           /*Espacio entre la columna de texto y la imagen*/
+}
+
+.nosotros-contenido {
+    flex: 1; /*Ocupa el 50% del ancho disponible*/
+}
+
+.nosotros-contenido h2 {
+    font-size: 2.2rem;
+    color: var(--color-cafe-oscuro);
+    margin-bottom: 20px;
+}
+
+.nosotros-contenido h3 {
+    font-size: 1.2rem;
+    color: var(--color-verde-hover);
+    margin-top: 18px;
+    margin-bottom: 6px;
+}
+
+.nosotros-contenido p {
+    margin-bottom: 16px;
+    color: var(--color-texto-oscuro);
+}
+
+.nosotros-contenido .btn-primario {
+    margin-top: 15px;
+}
+
+.nosotros-imagen {
+    flex: 1; /*Ocupa el otro 50% del ancho*/
+}
+
+.nosotros-img {
+    width: 100%;
+    border-radius: 16px; /*Esquinas redondeadas*/
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12); /*Sombra suave para dar profundidad*/
+    object-fit: cover;
+}
+
+/*Sección NUESTROS PRODUCTOS (Catálogo con CSS Grid)*/
+#productos.seccion-productos {
+    background-color: var(--color-fondo-productos);
+    padding: 80px 8%;
+    text-align: center; /*Centra el título y subtítulo de la sección*/
+}
+
+#productos h2 {
+    font-size: 2.2rem;
+    color: var(--color-cafe-oscuro);
+    margin-bottom: 8px;
+}
+
+.subtitulo-seccion {
+    font-size: 1.1rem;
+    color: var(--color-cafe-medio);
+    margin-bottom: 45px;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*4 columnas iguales en escritorio*/
+    gap: 25px; /*Separación entre cada tarjeta*/
+}
+
+.tarjeta-producto {
+    background-color: var(--color-blanco);
+    border-radius: 14px;
+    padding: 25px 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*Micro-interacción creativa*/
+.tarjeta-producto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.producto-img {
+    height: 180px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 18px;
+}
+
+.info-producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.info-producto h3 {
+    font-size: 1.25rem;
+    color: var(--color-cafe-oscuro);
+    margin-bottom: 10px;
+}
+
+.info-producto p {
+    font-size: 0.92rem;
+    color: #554840;
+    margin-bottom: 15px;
+    flex-grow: 1; /*Empuja el precio y el botón hacia abajo uniformemente*/
+}
+
+.precio-producto {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--color-cafe-oscuro);
+    margin-bottom: 15px;
+}
+
+/*Sección CONTÁCTANOS Y FORMULARIO */
+#contacto.seccion-contacto {
+    background-color: var(--color-cafe-oscuro);
+    color: var(--color-texto-claro);
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.contacto-info {
+    flex: 1;
+}
+
+.contacto-info h2 {
+    font-size: 2.2rem;
+    color: var(--color-blanco);
+    margin-bottom: 15px;
+}
+
+.contacto-info p {
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.contacto-info ul {
+    list-style: none;
+}
+
+.contacto-info li {
+    margin-bottom: 14px;
+    font-size: 1rem;
+}
+
+.formulario-contacto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-formulario label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-texto-claro);
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.05); /*Fondo translúcido*/
+    border: 1px solid #6E5A4F;
+    border-radius: 8px;
+    color: var(--color-blanco);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.campo-formulario input::placeholder,
+.campo-formulario textarea::placeholder {
+    color: #A8998E; /*Color suave pero legible para el texto guía*/
+}
+
+/*Indicador visual de foco para accesibilidad*/
+.campo-formulario input:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+    border-color: var(--color-verde-marca);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-enviar {
+    width: 100%; /*El botón Enviar ocupa todo el ancho del formulario como en el prototipo*/
+    font-size: 1.05rem;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+/*El mensaje existe en el HTML pero está oculto*/
+.alerta-exito {
+    display: none;
+    background-color: rgba(78, 159, 61, 0.2); /*Fondo verde translúcido*/
+    border: 1px solid var(--color-verde-marca);
+    color: #A8E890; /*Verde claro de alto contraste sobre el fondo café*/
+    padding: 14px 18px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/*PIE DE PÁGINA (FOOTER)*/
+.pie-de-pagina {
+    background-color: #1F140E; /*Un tono ligeramente más oscuro para separar del área de contacto*/
+    color: var(--color-texto-claro);
+    padding: 25px 8%;
+    border-top: 1px solid var(--color-cafe-medio);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-empresa-footer {
+    width: 38px;
+    height: auto;
+}
+
+.footer-copyright p {
+    font-size: 0.9rem;
+    color: #C2B2A3;
+}
+
+.footer-redes {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.footer-redes img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.footer-redes a:hover img {
+    transform: scale(1.15); /*Efecto de zoom sutil al pasar el ratón sobre las redes*/
+}
+
+/*DISEÑO RESPONSIVO (MEDIA QUERIES)*/
+/*Vista para Tablets (Pantallas menores o iguales a 1024px)*/
+@media (max-width: 1024px) {
+    .contenedor-productos {
+        grid-template-columns: repeat(2, 1fr); /*Pasa de 4 a 2 columnas*/
+    }
+
+    #nosotros.seccion-nosotros,
+    #contacto.seccion-contacto {
+        gap: 35px;
+    }
+}
+
+/*ACTIVIDAD 2: INICIO DE LA SECCIÓN GESTIÓN DE TAREAS*/
+#tareas.seccion-tareas {
+    background-color: var(--color-fondo-crema);
+    padding: 80px 8%;
+    text-align: center;
+}
+
+#tareas h2 {
+    font-size: 2.2rem;
+    color: var(--color-cafe-oscuro);
+    margin-bottom: 8px;
+}
+
+.contenedor-tareas {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: var(--color-blanco);
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.formulario-tareas {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.formulario-tareas input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #C2B2A3;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.formulario-tareas input:focus {
+    outline: none;
+    border-color: var(--color-verde-marca);
+}
+
+.mensaje-error-tarea {
+    color: #D9534F;
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: none; /*Oculto por defecto*/
+}
+
+.lista-tareas {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.item-tarea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-fondo-productos);
+    padding: 14px 18px;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-cafe-medio);
+    text-align: left;
+    gap: 15px;
+}
+
+/*Estilo cuando la tarea está completada*/
+.item-tarea.completada {
+    border-left-color: var(--color-verde-marca);
+    opacity: 0.85;
+}
+
+.item-tarea.completada .texto-tarea {
+    text-decoration: line-through;
+    color: #6E5A4F;
+}
+
+.texto-tarea {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.estado-badge {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background-color: #E0D6CC;
+    color: var(--color-cafe-oscuro);
+    font-weight: bold;
+}
+
+.item-tarea.completada .estado-badge {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+
+.botones-tarea {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-accion {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: var(--color-blanco);
+}
+
+.btn-estado {
+    background-color: var(--color-verde-marca);
+}
+
+.btn-editar {
+    background-color: #E67E22;
+}
+
+.btn-eliminar {
+    background-color: #C0392B;
+}
+
+.btn-accion:hover {
+    opacity: 0.9;
+}
+/*ACTIVIDAD 2: FIN DE LA SECCIÓN GESTIÓN DE TAREAS*/
+
+/*Vista para Smartphone (Pantallas menores o iguales a 768px)*/
+@media (max-width: 768px) {
+    /*Encabezado adaptable en el Smartphone*/
+    .encabezado-principal {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    .navegacion ul {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /*Portada Hero ajustada a pantalla de Smartphone*/
+    .hero {
+        padding: 70px 6%;
+        text-align: left;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero p {
+        font-size: 1.05rem;
+    }
+
+    /*¿Quiénes somos? pasa a 1 columna (Texto arriba, imagen abajo)*/
+    #nosotros.seccion-nosotros {
+        flex-direction: column;
+        padding: 55px 6%;
+    }
+
+    /*Productos pasa a 1 sola columna vertical*/
+    #productos.seccion-productos {
+        padding: 55px 6%;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: 1fr; /*1 tarjeta por fila en celular*/
+    }
+
+    /*Contacto pasa a 1 columna (Info arriba, formulario abajo)*/
+    #contacto.seccion-contacto {
+        flex-direction: column;
+        padding: 55px 6%;
+    }
+
+    /*Footer centrado verticalmente en Smartphone*/
+    .pie-de-pagina {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 25px 6%;
+    }
+
+    /*ACTIVIDAD 2: INICIO DE LA SECCIÓN RESPONSIVA DE TAREAS*/
+    #tareas.seccion-tareas {
+        padding: 55px 6%;
+    }
+
+    .formulario-tareas {
+        flex-direction: column;
+    }
+
+    .item-tarea {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .botones-tarea {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    /*ACTIVIDAD 2: FIN DE LA SECCIÓN RESPONSIVA DE TAREAS*/
+}
+
+/* AVANCE DEL RETO: UI/UX para el Inicio de Sesión y Panel */
+.seccion-admin {
+    background-color: var(--color-fondo-crema);
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.tarjeta-login {
+    background-color: var(--color-blanco);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.tarjeta-login h2 {
+    color: var(--color-cafe-oscuro);
+    margin-bottom: 5px;
+}
+
+.formulario-horizontal {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.formulario-horizontal input,
+.tarjeta-login input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: var(--color-texto-oscuro); /* o usa #2C221E directamente */
+}
+
+.campo-formulario label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-texto-oscuro); /* o usa #2C221E directamente */
+}
